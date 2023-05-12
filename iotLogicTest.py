@@ -13,7 +13,7 @@ amount_items=[]
 def welcome():
     print("=======================")
     print('Welcome to TokoPaedi :)')
-    print('Please Select Menu\n 1:Show All Item List\n 2.Show Promo Item List\n 3.Checkout\n 4.Add another Item\n 6.Exit')
+    print('Please Select Menu\n 1:Show All Item List\n 2.Show Promo Item List\n 3.Checkout\n 4.Add another Item\n Q.Exit')
     print("=======================")
 def checkout():
     print("Select Menu:")
@@ -61,6 +61,9 @@ try:
             name_items.append(itemInput)                                            #save item name to array
             amount_items.append(amount)
             checkout()
+        if (userInput=="N" or userInput=="n"):
+            welcome()
+            userInput
         if (userInput=='3'):
             for indX in range(len(price_items)):
                 sumPrices=sumPrices+price_items[indX]
@@ -84,8 +87,8 @@ try:
                 print("-",all_items[x])
             wtb()
             userInput
-        if (userInput=='6'):
+        if (userInput=='Q' or userInput=='q'):
             print('Thank you for shopping, Have a Nice day')
             exit()
 except :
-    print("wrong input")    
+    print("Exit")    
